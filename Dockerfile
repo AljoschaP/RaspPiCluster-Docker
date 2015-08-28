@@ -7,7 +7,8 @@ RUN addgroup hadoop
 RUN adduser --ingroup hadoop hduser
 RUN adduser hduser sudo
 
-RUN mkdir ~/.ssh
-RUN ssh-keygen -t rsa -P ""
-RUN cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
+RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
+
+EXPOSE 22
+ENTRYPOINT ["/bin/bash"]
 
