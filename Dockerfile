@@ -1,7 +1,7 @@
 FROM resin/rpi-raspbian:jessie
 MAINTAINER the native web <hello@thenativeweb.io>
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential libssl-dev python wget 
+RUN apt-get install -y build-essential libssl-dev python wget openssl-server
     
 RUN addgroup hadoop
 RUN adduser --ingroup hadoop hduser
