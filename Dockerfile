@@ -19,7 +19,7 @@ RUN tar -xvzf hadoop-1.2.1.tar.gz -C /opt/
 RUN mv /opt/hadoop-1.2.1 /opt/hadoop
 RUN chown -R hduser:hadoop /opt/hadoop
 
-COPY bashrc ~/.bashrc
+COPY bashrc home/hduser/.bashrc
 
 EXPOSE 22
 ENTRYPOINT ["/bin/bash"]
