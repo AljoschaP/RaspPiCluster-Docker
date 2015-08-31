@@ -9,6 +9,11 @@ RUN adduser hduser sudo
 
 RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
 
+USER hduser
+RUN mkdir ~/.ssh
+
+USER root
+
 RUN wget http://h2380793.stratoserver.net/jdk-8u60-linux-arm32-vfp-hflt.tar.gz
 RUN tar zxvf jdk-8u60-linux-arm32-vfp-hflt.tar.gz -C /opt
 
@@ -28,9 +33,8 @@ RUN chown hduser:hadoop /hdfs/tmp
 RUN chmod 750 /hdfs/tmp
 
 
-
-
-
 EXPOSE 22
+COPY run.sh /run.sh
 ENTRYPOINT ["/bin/bash"]
+CMD ["/run.sh"]
 
