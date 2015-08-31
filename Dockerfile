@@ -11,7 +11,7 @@ RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSep
 
 USER hduser
 RUN mkdir ~/.ssh
-CMD ssh-keygen -q -t rsa -N '' -f /keys/id_rsa
+CMD ssh-keygen -q -t rsa -P '' -N '' -f /keys/id_rsa
 CMD cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
 
 USER root
