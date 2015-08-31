@@ -16,9 +16,8 @@ RUN update-alternatives --install "/usr/bin/java" "java" "/opt/jdk1.8.0_60/bin/j
 
 RUN wget http://apache.mirrors.spacedump.net/hadoop/core/hadoop-1.2.1/hadoop-1.2.1.tar.gz
 RUN tar -xvzf hadoop-1.2.1.tar.gz -C /opt/
-cd /opt
-sudo mv /opt/hadoop-1.2.1 /opt/hadoop
-sudo chown -R hduser:hadoop /opt/hadoop
+RUN mv /opt/hadoop-1.2.1 /opt/hadoop
+RUN chown -R hduser:hadoop /opt/hadoop
 
 EXPOSE 22
 ENTRYPOINT ["/bin/bash"]
