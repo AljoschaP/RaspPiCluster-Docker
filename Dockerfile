@@ -33,7 +33,6 @@ RUN chown hduser:hadoop /hdfs/tmp
 RUN chmod 750 /hdfs/tmp
 USER hduser
 
-CMD ssh-keygen -q -t rsa -P '' -N '' -f /keys/id_rsa
 
 
 
