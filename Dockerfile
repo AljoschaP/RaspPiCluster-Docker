@@ -19,13 +19,17 @@ RUN tar -xvzf hadoop-1.2.1.tar.gz -C /opt/
 RUN mv /opt/hadoop-1.2.1 /opt/hadoop
 RUN chown -R hduser:hadoop /opt/hadoop
 
-COPY bashrc ~/.bashrc
+COPY bashrc home/hduser/.bashrc
+
 COPY conf/hadoop/ /opt/hadoop/conf/
 
 RUN mkdir -p /hdfs/tmp
 RUN chown hduser:hadoop /hdfs/tmp
 RUN chmod 750 /hdfs/tmp
 RUN hadoop namenode -format
+
+
+
 
 EXPOSE 22
 ENTRYPOINT ["/bin/bash"]
