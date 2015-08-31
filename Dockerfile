@@ -12,7 +12,7 @@ RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSep
 RUN wget http://h2380793.stratoserver.net/jdk-8u60-linux-arm32-vfp-hflt.tar.gz
 RUN tar zxvf jdk-8u60-linux-arm32-vfp-hflt.tar.gz -C /opt
 
-RUN update-alternatives --install "/usr/bin/java" "java" "/opt/jdk1.8.0/bin/java" 1 
+RUN update-alternatives --install "/usr/bin/java" "java" "/opt/jdk1.8.0_60/bin/java" 1 
 
 EXPOSE 22
 ENTRYPOINT ["/bin/bash"]
