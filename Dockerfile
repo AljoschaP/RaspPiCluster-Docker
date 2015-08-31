@@ -34,7 +34,7 @@ RUN chmod 750 /hdfs/tmp
 USER hduser
 
 CMD ssh-keygen -q -t rsa -P '' -N '' -f /keys/id_rsa
-CMD cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
+
 
 
 
