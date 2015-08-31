@@ -31,13 +31,10 @@ COPY conf/hadoop/ /opt/hadoop/conf/
 RUN mkdir -p /hdfs/tmp
 RUN chown hduser:hadoop /hdfs/tmp
 RUN chmod 750 /hdfs/tmp
-USER hduser
-
-
-
-
 
 
 EXPOSE 22
+COPY run.sh /run.sh
 ENTRYPOINT ["/bin/bash"]
+CMD ["/run.sh"]
 
