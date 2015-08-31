@@ -33,6 +33,7 @@ COPY conf/hadoop/ /opt/hadoop/conf/
 RUN mkdir -p /hdfs/tmp
 RUN chown hduser:hadoop /hdfs/tmp
 RUN chmod 750 /hdfs/tmp
+USER hduser
 RUN hadoop namenode -format
 
 
