@@ -32,6 +32,8 @@ RUN mkdir -p /hdfs/tmp
 RUN chown hduser:hadoop /hdfs/tmp
 RUN chmod 750 /hdfs/tmp
 
+RUN passwd -d root
+RUN passwd -d hduser
 
 EXPOSE 22
 COPY run.sh /run.sh
