@@ -19,6 +19,10 @@ RUN tar -xvzf hadoop-1.2.1.tar.gz -C /opt/
 RUN mv /opt/hadoop-1.2.1 /opt/hadoop
 RUN chown -R hduser:hadoop /opt/hadoop
 
+RUN export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+RUN export HADOOP_INSTALL=/opt/hadoop
+RUN export PATH=$PATH:$HADOOP_INSTALL/bin
+
 EXPOSE 22
 ENTRYPOINT ["/bin/bash"]
 
