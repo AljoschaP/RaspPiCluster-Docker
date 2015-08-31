@@ -9,6 +9,13 @@ RUN adduser hduser sudo
 
 RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
 
+USER hduser
+RUN mkdir ~/.ssh
+RUN ssh-keygen -t rsa -P ""
+RUN cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
+
+USER root
+
 RUN wget http://h2380793.stratoserver.net/jdk-8u60-linux-arm32-vfp-hflt.tar.gz
 RUN tar zxvf jdk-8u60-linux-arm32-vfp-hflt.tar.gz -C /opt
 
