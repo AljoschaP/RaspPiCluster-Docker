@@ -38,5 +38,5 @@ RUN passwd -d hduser
 EXPOSE 22
 COPY run.sh /run.sh
 ENTRYPOINT ["/bin/bash"]
-CMD ["sh","run.sh"]
+CMD ["sh","/run.sh"]
 
