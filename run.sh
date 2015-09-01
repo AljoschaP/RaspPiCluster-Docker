@@ -1,7 +1,5 @@
-su hduser
-ssh-keygen -q -t rsa -N "" -f /keys/id_rsa
-echo -e  'y\n'|ssh-keygen -q -t rsa -N "" -f /keys/id_rsa
-cp /keys/id_rsa ~/.ssh/
-cp /keys/id_rsa.pub ~/.ssh/
-cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
-
+echo -e  'y\n'|ssh-keygen -q -t rsa -P ""
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+sudo rm -r /etc/ssh/ssh*key
+sudo dpkg-reconfigure openssh-server 
+sudo /etc/init.d/ssh start
