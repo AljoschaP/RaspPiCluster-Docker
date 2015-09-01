@@ -37,5 +37,5 @@ RUN passwd -d hduser
 
 EXPOSE 22
 COPY run.sh /run.sh
-CMD [/run.sh"]
+CMD ["/run.sh"]
 
