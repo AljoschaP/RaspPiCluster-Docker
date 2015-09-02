@@ -42,4 +42,3 @@ RUN chmod 777 /run.sh
 
 USER hduser
 
-CMD ["/run.sh"]
