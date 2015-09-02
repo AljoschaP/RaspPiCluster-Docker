@@ -1,5 +1,5 @@
 FROM resin/rpi-raspbian:jessie
-MAINTAINER the native web <hello@thenativeweb.io>
+MAINTAINER Aljoscha Pörtner <aljoscha.poertner@fh-bielefeld.de>
 RUN apt-get update
 RUN apt-get install -y build-essential libssl-dev python wget openssh-server
     
@@ -42,4 +42,4 @@ RUN chmod 777 /run.sh
 
 USER hduser
 
-CMD["/run.sh"]
+CMD ["/run.sh"]
