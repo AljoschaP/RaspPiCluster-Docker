@@ -14,4 +14,4 @@ echo "RECONFIGURE SSH SERVER"
 echo "*********************************"
 sudo dpkg-reconfigure openssh-server
 sudo /etc/init.d/ssh start
-sudo sshpass -p 'hypriot' scp /home/hduser/.ssh/id_rsa.pub root@node01:/home/hduser/keys/$HOSTNAME 
+sudo sshpass -p 'hypriot' scp /home/hduser/.ssh/id_rsa.pub root@node01:/home/pi/keys/$HOSTNAME 
