@@ -6,6 +6,6 @@
 <configuration>
   <property>
     <name>mapred.job.tracker</name>
-    <value>localhost:54311</value>
+    <value>node01:54311</value>
   </property>
 </configuration>
