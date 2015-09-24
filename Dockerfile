@@ -1,7 +1,7 @@
 FROM resin/rpi-raspbian:jessie
 MAINTAINER Aljoscha Pörtner <aljoscha.poertner@fh-bielefeld.de>
 RUN apt-get update
-RUN apt-get install -y build-essential libssl-dev python wget openssh-server
+RUN apt-get install -y build-essential libssl-dev python wget openssh-server sshpass
     
 RUN addgroup hadoop
 RUN adduser --ingroup hadoop hduser
