@@ -8,6 +8,7 @@ RUN adduser --ingroup hadoop hduser
 RUN adduser hduser sudo
 
 RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
+RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 USER hduser
 RUN mkdir ~/.ssh
