@@ -14,4 +14,4 @@ echo "RECONFIGURE SSH SERVER"
 echo "*********************************"
 sudo dpkg-reconfigure openssh-server
 sudo /etc/init.d/ssh start
-sudo sshpass -p 'hypriot' ssh-copy-id -i /home/hduser/.ssh/id_rsa.pub root@node01 
+sudo sshpass -p 'toor' ssh-copy-id -i /home/hduser/.ssh/id_rsa.pub keyuser@node01 
