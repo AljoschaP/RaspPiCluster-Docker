@@ -1,5 +1,7 @@
 echo "SETUP AND START HADOOP"
 echo "*********************************"
+echo "GET authorized keys"
+sshpass -p 'toor' scp -P 20002 keyuser@node01:~/.ssh/authorized_keys ~/.ssh/
 hadoop namenode -format
 /opt/hadoop/bin/start-dfs.sh
 /opt/hadoop/bin/start-mapred.sh
