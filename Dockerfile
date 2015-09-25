@@ -35,7 +35,7 @@ RUN chmod 750 /hdfs/tmp
 RUN passwd -d root
 RUN passwd -d hduser
 
-EXPOSE 22 50030 50070 50075 50090 50105 50060 54310
+EXPOSE 22 50030 50070 50075 50090 50105 50060 54310 54311
 COPY run.sh /run.sh
 COPY start_hadoop.sh /start_hadoop.sh
 
